@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_push_swap.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:37:38 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/21 22:24:16 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:24:08 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
+# include <stdarg.h>
 
 /*all structs*/
 
@@ -31,8 +33,8 @@ typedef struct s_stack
 
 typedef	struct s_extremum
 {
-	t_stack *min;
-	t_stack *max;
+	struct s_stack *min;
+	struct s_stack *max;
 	int pos;
 }			t_extremum;
 

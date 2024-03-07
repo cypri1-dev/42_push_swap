@@ -6,7 +6,7 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 16:41:41 by cyferrei          #+#    #+#              #
-#    Updated: 2024/02/22 17:08:19 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/02/26 13:17:10 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ RESET   = \e[00m
 
 SOURCE = ./sources/
 
-EXECUTION = $(addprefix exec/, exec_instructions.c)
+EXECUTION = $(addprefix exec/, exec_instructions.c exec_final_sort.c)
 INSTRUCTIONS = $(addprefix instructions/, instructions_utils.c swap.c push.c rotate.c reverse_rotate.c)
 ALGO = $(addprefix algorithm/, algo_utils.c algo.c)
 PUSH_SWAP = $(addprefix $(SOURCE), $(INSTRUCTIONS) $(ALGO) $(EXECUTION) push_swap.c parsing_args.c end_sort.c init.c)

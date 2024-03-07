@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:05:27 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/19 11:02:21 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:32:35 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rotate_a(t_stack **a, int print)
 	lastNode->next->next = NULL;
 	update_pos(*a);
 	if(print)
-		printf("ra\n");
+		ft_printf("ra\n");
 }
 void	rotate_b(t_stack **b, int print)
 {
@@ -46,11 +46,11 @@ void	rotate_b(t_stack **b, int print)
 	lastNode->next->next = NULL;
 	update_pos(*b);
 	if(print)
-		printf("rb\n");
+		ft_printf("rb\n");
 }
 void	rotate_a_b(t_stack **a, t_stack **b)
 {
 	rotate_a(a, 0);
 	rotate_b(b, 0);
-	printf("rr\n");
+	ft_printf("rr\n");
 }

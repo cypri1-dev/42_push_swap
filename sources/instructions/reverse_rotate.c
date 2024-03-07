@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:54:06 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/19 14:12:52 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:05:10 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void reverse_rotate_a(t_stack **a, int print)
     *a = lastNode;
 	update_pos(*a);
 	if(print)
-		printf("rra\n");
+		ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_stack **b, int print) 
@@ -45,14 +45,14 @@ void	reverse_rotate_b(t_stack **b, int print)
     *b = lastNode;
 	update_pos(*b);
 	if(print)
-		printf("rrb\n");
+		ft_printf("rrb\n");
 }
 
 void	reverse_rotate_a_b(t_stack **a, t_stack **b)
 {
 	reverse_rotate_a(a, 0);
 	reverse_rotate_b(b, 0);
-	update_pos(*a);
-	update_pos(*b);
-	printf("rrr\n");
+	// update_pos(*a);
+	// update_pos(*b);
+	ft_printf("rrr\n");
 }

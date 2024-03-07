@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:59 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/22 20:53:26 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 19:21:43 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,14 @@ void	sort_big_list(t_stack **a, t_stack **b)
 	{
 		extrm.max = (*b)->next;
 		extrm.min = (*b);
+		swap_b(b, 1);
 	}
 	//printf("\nmin value : [%d]\nmax value : [%d]\n", extrm.min, extrm.max);
 	while (ft_lstsize(*a) > 3)
-	{
+	{	
 		extrm = is_new_extremum(b, extrm);
-		best_element = calculate_cost(a, b, extrm);
-		printf("\nNext to push is [%d]\n", best_element->value);
+		best_element = calculate_cost(a, b);
+		// printf("\nNext to push is [%d]\n", best_element->value);
 		move_to_pos(a, b, best_element);
 		// if(best_element != NULL)
 		// 	printf("\nnode to push --> value : [%d] || pos : [%d]\n\n", best_element->value, best_element->pos);
@@ -111,5 +112,5 @@ void	sort_big_list(t_stack **a, t_stack **b)
 		// printf("\n[%d] (1 for UP - 0 for DOWN)\n", is_up_or_down(a, best_element));
 	}
 	sort_three(a);
-	//final_sort(a, b);
+	final_sort(a, b);
 }

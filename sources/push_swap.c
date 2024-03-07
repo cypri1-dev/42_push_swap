@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:34:09 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/21 14:25:13 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:26:49 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	main (int argc, char **argv, char **envp)
 
 	i = 1;
 	if(!check_env(envp))
-		exit_error(env_error, "No environnement variable!", NULL, NULL);
+		exit_error(env_error, NULL, NULL);
 	if(argc < 2)
-		exit_error(arg_missing, "Not enought arguments", NULL, NULL);
+		exit_error(arg_missing, NULL, NULL);
 	if (argc == 2)
 	{
 		pars_one_arg(argv[1]);

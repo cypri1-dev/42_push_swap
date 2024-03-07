@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:34:32 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/22 17:09:16 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:32:00 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *s, int c);
 /*push_swap parsing - exit functions prototypes*/
 
 int	check_env(char **envp);
-void	exit_error(enum e_state i, char *message, t_stack *a, char **args);
+void	exit_error(enum e_state i, t_stack *a, char **args);
 void	pars_one_arg(char *str);
 void	init_multi_arg(int argc, char **argv);
 void	init_arg(char *str);
@@ -60,9 +60,10 @@ void	sort_four(t_stack **a, t_stack **b);
 void	sort_stacks(t_stack **a, t_stack **b);
 void	sort_big_list(t_stack **a, t_stack **b);
 t_extremum	is_new_extremum(t_stack **a, t_extremum extrm);
-t_stack	*calculate_cost(t_stack **a, t_stack **b, t_extremum extrm);
+t_stack	*calculate_cost(t_stack **a, t_stack **b);
 int	is_up_or_down(t_stack **lst, t_stack *node);
-t_stack	*find_target(t_stack *node, t_stack **b, t_extremum extrm);
+t_stack	*find_target(t_stack *node, t_stack **b);
 void	move_to_pos(t_stack **a, t_stack **b, t_stack *node);
+void	final_sort(t_stack **a, t_stack **b);
 
 #endif

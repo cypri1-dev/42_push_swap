@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:47:29 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/13 20:12:03 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:27:37 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_overflow(t_stack *a, char **args)
 		if (args[i][j] != '\0' && ft_strcmp(args[i] + j, nb) != 0)
 		{
 			free(nb);
-			exit_error(overflow, "Something went wrong...", a, args);
+			exit_error(overflow, a, args);
 		}
 		free(nb);
 		i++;
@@ -52,7 +52,7 @@ void	check_double(t_stack *a, char **args)
 		while(tmp2)
 		{
 			if (tmp2->value == value_test)
-				exit_error(double_nb, "Doubles detected ! MF", a, args);
+				exit_error(double_nb, a, args);
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;
@@ -78,9 +78,9 @@ static int	check_digit(char *str)
 void	pars_one_arg(char *str)
 {
 	if (!check_empty_string(str))
-		exit_error(arg_empty, "Empty string!", NULL, NULL);
+		exit_error(arg_empty, NULL, NULL);
 	if (!check_digit(str))
-		exit_error(wrong_input, "Argument(s) need(s) ONLY digits and accept ONLY ONE + or - sign!", NULL, NULL);
+		exit_error(wrong_input, NULL, NULL);
 }
 
 int	check_env(char **envp)

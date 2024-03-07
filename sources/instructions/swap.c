@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 20:13:13 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/17 16:32:21 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:32:23 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void swap_a(t_stack **a, int print)
     }
     update_pos(*a);
     if(print)
-        printf("sa\n");
+        ft_printf("sa\n");
 }
 
 void swap_b(t_stack **b, int print)
@@ -51,11 +51,11 @@ void swap_b(t_stack **b, int print)
     }
     update_pos(*b);
     if(print)
-        printf("sb\n");
+        ft_printf("sb\n");
 }
 void swap_a_b(t_stack **a, t_stack **b)
 {
     swap_a(a, 0);
     swap_b(b, 0);
-    printf("ss\n");
+    ft_printf("ss\n");
 }
