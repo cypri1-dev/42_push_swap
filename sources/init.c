@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 14:59:15 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 18:14:46 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:46:22 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	init_arg(char *str)
 {
 	t_stack *a;
 	t_stack *b;
-	// t_stack *tmp;
-	// t_stack *tmp2;
 	char **args;
 	int i;
 	
@@ -64,28 +62,6 @@ void	init_arg(char *str)
 	check_double(a, args);
 	is_sorted(a, args);
 	free_tab(args);
-	// tmp = a;
-	// tmp2 = b;
-	// printf("STACK A\n\n");
-	// while (tmp->next)
-	// {
-	// 	printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp->value, tmp->pos, tmp->next->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp->value, tmp->pos, tmp->next);
-	// printf("\n\nSTACK B\n\n");
-	// if (b == NULL)
-	// 	printf("Stack B is empty!\n\n");
-	// else
-	// {
-	// 	while (tmp2->next)
-	// 	{
-	// 		printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp2->value, tmp2->pos, tmp2->next->value);
-	// 		tmp2 = tmp2->next;
-	// 	}
-	// 	printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp2->value, tmp2->pos, tmp2->next);
-
-	// }
 	if(ft_lstsize(a) == 2)
 		sort_two(&a);
 	else if (ft_lstsize(a) == 3)
@@ -94,28 +70,6 @@ void	init_arg(char *str)
 		sort_four(&a, &b);
 	else
 		sort_big_list(&a, &b);
-	// tmp = a;
-	// tmp2 = b;
-	// printf("\nAFTER SORT\n");
-	// printf("STACK A\n\n");
-	// while (tmp->next)
-	// {
-	// 	printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp->value, tmp->pos, tmp->next->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp->value, tmp->pos, tmp->next);
-	// printf("\n\nSTACK B\n\n");
-	// if (b == NULL)
-	// 	printf("Stack B is empty!\n\n");
-	// else
-	// {
-	// 	while (tmp2->next)
-	// 	{
-	// 		printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp2->value, tmp2->pos, tmp2->next->value);
-	// 		tmp2 = tmp2->next;
-	// 	}
-	// 	printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp2->value, tmp2->pos, tmp2->next);
-	// }
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 }
@@ -124,8 +78,6 @@ void	init_multi_arg(int argc, char **argv)
 {
 	t_stack *a;
 	t_stack *b;
-	// t_stack *tmp;
-	// t_stack *tmp2;
 	char **args;
 	int i;
 	int j;
@@ -150,28 +102,6 @@ void	init_multi_arg(int argc, char **argv)
 	check_double(a, args);
 	is_sorted(a, args);
 	free_tab(args);
-	// tmp = a;
-	// tmp2 = b;
-	// printf("STACK A\n\n");
-	// while (tmp->next)
-	// {
-	// 	printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp->value, tmp->pos, tmp->next->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp->value, tmp->pos, tmp->next);
-	// printf("\n\nSTACK B\n\n");
-	// if (b == NULL)
-	// 	printf("Stack B is empty!\n");
-	// else
-	// {
-	// 	while (tmp2->next)
-	// 	{
-	// 		printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp2->value, tmp2->pos, tmp2->next->value);
-	// 		tmp2 = tmp2->next;
-	// 	}
-	// 	printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp2->value, tmp2->pos, tmp2->next);
-
-	// }
 	if(ft_lstsize(a) == 2)
 		sort_two(&a);
 	else if (ft_lstsize(a) == 3)
@@ -180,28 +110,6 @@ void	init_multi_arg(int argc, char **argv)
 		sort_four(&a, &b);
 	else
 		sort_big_list(&a, &b);
-	// tmp = a;
-	// tmp2 = b;
-	// printf("\nAFTER SORT\n");
-	// printf("STACK A\n\n");
-	// while (tmp->next)
-	// {
-	// 	printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp->value, tmp->pos, tmp->next->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp->value, tmp->pos, tmp->next);
-	// printf("\n\nSTACK B\n\n");
-	// if (b == NULL)
-	// 	printf("Stack B is empty!\n\n");
-	// else
-	// {
-	// while (tmp2->next)
-	// {
-	// 	printf("value : [%d] || pos : [%d] || next value: [%d]\n", tmp2->value, tmp2->pos, tmp2->next->value);
-	// 	tmp2 = tmp2->next;
-	// }
-	// printf ("value : [%d] || pos : [%d] || next value: [%p]\n", tmp2->value, tmp2->pos, tmp2->next);
-	// }
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 }

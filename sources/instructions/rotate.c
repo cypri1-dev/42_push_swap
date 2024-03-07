@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:05:27 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:32:35 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:44:51 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,36 @@
 
 void	rotate_a(t_stack **a, int print)
 {
-	t_stack *lastNode;
+	t_stack *last_node;
 	
 	if (*a == NULL || (*a)->next == NULL)
 		return ;
-	lastNode = *a;
-	while(lastNode->next != NULL)
-		lastNode = lastNode->next;
-	lastNode->next = *a;
-	(*a)->previous = lastNode;
+	last_node = *a;
+	while(last_node->next != NULL)
+		last_node = last_node->next;
+	last_node->next = *a;
+	(*a)->previous = last_node;
 	*a = (*a)->next;
 	(*a)->previous = NULL;
-	lastNode->next->next = NULL;
+	last_node->next->next = NULL;
 	update_pos(*a);
 	if(print)
 		ft_printf("ra\n");
 }
 void	rotate_b(t_stack **b, int print)
 {
-	t_stack *lastNode;
+	t_stack *last_node;
 	
 	if (*b == NULL || (*b)->next == NULL)
 		return ;
-	lastNode = *b;
-	while(lastNode->next != NULL)
-		lastNode = lastNode->next;
-	lastNode->next = *b;
-	(*b)->previous = lastNode;
+	last_node = *b;
+	while(last_node->next != NULL)
+		last_node = last_node->next;
+	last_node->next = *b;
+	(*b)->previous = last_node;
 	*b = (*b)->next;
 	(*b)->previous = NULL;
-	lastNode->next->next = NULL;
+	last_node->next->next = NULL;
 	update_pos(*b);
 	if(print)
 		ft_printf("rb\n");

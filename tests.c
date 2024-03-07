@@ -1,4 +1,4 @@
-// tmp = a;
+	// tmp = a;
 	// tmp2 = b;
 	// printf("STACK A\n\n");
 	// while (tmp->next)

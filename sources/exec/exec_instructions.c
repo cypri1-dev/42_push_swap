@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 17:05:41 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 19:12:55 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:42:43 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,9 @@ static void	both_top_median(t_stack **a, t_stack **b, t_stack *node)
 void	move_to_pos(t_stack **a, t_stack **b, t_stack *node)
 {	
 	if (is_up_or_down(a, node) == 1 && is_up_or_down(b, node->target) == 1)
-	{
-		// printf("BOTH TOP !\n");
-		both_top_median(a, b, node);
-	}			
+		both_top_median(a, b, node);		
 	else if (is_up_or_down(a, node) == 0 && is_up_or_down(b, node->target) == 0)
-	{
-		// printf("BOTH DOWN !\n");
 		both_down_median(a, b, node);
-	}
 	else if (is_up_or_down(a, node) == 1 && is_up_or_down(b, node->target) == 0)
 		a_top_and_b_down_median(a, b, node);
 	else if (is_up_or_down(a, node) == 0 && is_up_or_down(b, node->target) == 1)

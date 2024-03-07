@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:13:59 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:32:57 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:43:47 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 
 void	push_a(t_stack **a, t_stack **b)
 {
-	t_stack *topB;
+	t_stack *top_b;
 	
 	if (*b == NULL)
 		return ;
-	topB = *b;
-	*b = topB->next;
+	top_b = *b;
+	*b = top_b->next;
 	if (*a != NULL)
 	{
-		topB->next = *a;
-		(*a)->previous = topB;
+		top_b->next = *a;
+		(*a)->previous = top_b;
 	}
 	else
-		topB->next = NULL;
-	topB->previous = NULL;
-	*a = topB;
+		top_b->next = NULL;
+	top_b->previous = NULL;
+	*a = top_b;
 	update_pos(*a);
 	update_pos(*b);
 	ft_printf("pa\n");
 }
 void	push_b(t_stack **a, t_stack **b)
 {
-	t_stack *topA;
+	t_stack *top_a;
 	
 	if (*a == NULL)
 		return ;
-	topA = *a;
-	*a = topA->next;
+	top_a = *a;
+	*a = top_a->next;
 	if (*b != NULL)
 	{
-		topA->next = *b;
-		(*b)->previous = topA;
+		top_a->next = *b;
+		(*b)->previous = top_a;
 	}
 	else
-		topA->next = NULL;
-	topA->previous = NULL;
-	*b = topA;
+		top_a->next = NULL;
+	top_a->previous = NULL;
+	*b = top_a;
 	update_pos(*a);
 	update_pos(*b);
 	ft_printf("pb\n");

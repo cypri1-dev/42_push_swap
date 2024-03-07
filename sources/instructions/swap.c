@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 20:13:13 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:32:23 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:45:30 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ void swap_a(t_stack **a, int print)
 {
     if (*a != NULL && (*a)->next != NULL)
     {
-        t_stack *firstNode = *a;
-        t_stack *secondNode = (*a)->next;
+        t_stack *fisrt_node = *a;
+        t_stack *second_node = (*a)->next;
 
-        firstNode->next = secondNode->next;
-        firstNode->previous = secondNode;
-        secondNode->next = firstNode;
-        secondNode->previous = NULL;
-        if (firstNode->next != NULL)
-            firstNode->next->previous = firstNode;
-        if (*a == firstNode)
-            *a = secondNode;	
+        fisrt_node->next = second_node->next;
+        fisrt_node->previous = second_node;
+        second_node->next = fisrt_node;
+        second_node->previous = NULL;
+        if (fisrt_node->next != NULL)
+            fisrt_node->next->previous = fisrt_node;
+        if (*a == fisrt_node)
+            *a = second_node;	
     }
     update_pos(*a);
     if(print)
@@ -37,17 +37,17 @@ void swap_b(t_stack **b, int print)
 {
     if (*b != NULL && (*b)->next != NULL)
     {
-        t_stack *firstNode = *b;
-        t_stack *secondNode = (*b)->next;
+        t_stack *fisrt_node = *b;
+        t_stack *second_node = (*b)->next;
 
-        firstNode->next = secondNode->next;
-        firstNode->previous = secondNode;
-        secondNode->next = firstNode;
-        secondNode->previous = NULL;
-        if (firstNode->next != NULL)
-            firstNode->next->previous = firstNode;
-        if (*b == firstNode)
-            *b = secondNode;	
+        fisrt_node->next = second_node->next;
+        fisrt_node->previous = second_node;
+        second_node->next = fisrt_node;
+        second_node->previous = NULL;
+        if (fisrt_node->next != NULL)
+            fisrt_node->next->previous = fisrt_node;
+        if (*b == fisrt_node)
+            *b = second_node;	
     }
     update_pos(*b);
     if(print)

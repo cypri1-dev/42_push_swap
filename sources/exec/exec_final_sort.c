@@ -6,7 +6,7 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:35:18 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 19:27:00 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/07 18:41:16 by cyprien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static t_stack *find_target_in_a(t_stack *node, t_stack **a)
 	extrm_a.max = *a;
 	extrm_a = is_new_extremum(a, extrm_a);
 	int best_diff = -1;
-	// printf("min : [%d] || max : [%d]\n", extrm_a.min->value, extrm_a.max->value);
 	
 	if (node->value > extrm_a.max->value || node->value < extrm_a.min->value)
 		target = extrm_a.min;
@@ -42,8 +41,6 @@ static t_stack *find_target_in_a(t_stack *node, t_stack **a)
 			tmp = tmp->next;
 		}
 	}
-	// if (target != NULL)
-	// 	printf("node->value is [%d] and its target->value is [%d]\n", node->value, target->value);
 	return target;
 }
 	
