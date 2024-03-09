@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 14:33:54 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:31:59 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/09 18:20:06 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 
 void	exit_error(enum e_state i, t_stack *a, char **args)
 {
-	if (i == env_error || i == arg_missing || i == wrong_input || i == arg_empty)
-	{	
-		ft_printf("Error\n");
+	if (i == wrong_input || i == double_nb || i == overflow)
+	{
+		if(args != NULL)
+			free_tab(args);
+		if (a != NULL)
+			ft_lstclear(&a);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
-	if (i == double_nb || i == overflow)
+	if (i == arg_missing || i == sorted || i == arg_empty)
 	{
-		free_tab(args);
-		ft_lstclear(&a);
-		ft_printf("Error\n");
+		if(args != NULL)
+			free_tab(args);
+		if (a != NULL)
+			ft_lstclear(&a);
 		exit(1);
 	}
-	if (i == sorted)
-	{
-		free_tab(args);
-		ft_lstclear(&a);
-		ft_printf("OK\n");
-		exit(0);
-	}
-	
 }

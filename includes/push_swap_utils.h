@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 14:38:09 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/19 15:40:36 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/09 18:23:16 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 
 enum	e_state
 {
-	env_error = 2,
+	env_error = 1,
 	arg_missing = 2,
-	wrong_input = 2,
-	arg_empty = 2,
+	wrong_input = 3,
+	arg_empty = 4,
 	double_nb = 5,
-	overflow = 5,
-	sorted = 3,
+	overflow = 6,
+	sorted = 7,
 };
 
 /*all structures*/
