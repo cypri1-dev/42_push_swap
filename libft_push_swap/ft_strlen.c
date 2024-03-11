@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:57:16 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/10 11:58:16 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 07:55:46 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (str[i])
 		i++;

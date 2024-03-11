@@ -14,10 +14,10 @@
 
 char	*ft_strstr(char *haystack, char *needle)
 {
-	size_t haystack_len;
-	size_t needle_len;
-	size_t i;
-	size_t j;
+	size_t	haystack_len;
+	size_t	needle_len;
+	size_t	i;
+	size_t	j;
 
 	haystack_len = ft_strlen(haystack);
 	needle_len = ft_strlen(needle);
@@ -28,7 +28,7 @@ char	*ft_strstr(char *haystack, char *needle)
 		while (j < needle_len)
 		{
 			if (haystack[i + j] != needle[j])
-				break;
+				break ;
 			j++;
 		}
 		if (j == needle_len)

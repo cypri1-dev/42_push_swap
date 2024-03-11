@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 14:33:54 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/09 18:20:06 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 07:57:42 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	exit_error(enum e_state i, t_stack *a, char **args)
 {
 	if (i == wrong_input || i == double_nb || i == overflow)
 	{
-		if(args != NULL)
+		if (args != NULL)
 			free_tab(args);
 		if (a != NULL)
 			ft_lstclear(&a);
@@ -25,7 +25,7 @@ void	exit_error(enum e_state i, t_stack *a, char **args)
 	}
 	if (i == arg_missing || i == sorted || i == arg_empty)
 	{
-		if(args != NULL)
+		if (args != NULL)
 			free_tab(args);
 		if (a != NULL)
 			ft_lstclear(&a);

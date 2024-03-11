@@ -6,20 +6,20 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:34:09 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/09 18:20:49 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 08:15:53 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main (int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	if(!check_env(envp))
+	if (!check_env(envp))
 		exit_error(env_error, NULL, NULL);
-	if(argc < 2)
+	if (argc < 2)
 		exit_error(arg_missing, NULL, NULL);
 	if (argc == 2)
 	{
@@ -28,7 +28,7 @@ int	main (int argc, char **argv, char **envp)
 	}
 	if (argc > 2)
 	{
-		while(argv[i])
+		while (argv[i])
 			pars_one_arg(argv[i++]);
 		init_multi_arg(argc, argv);
 	}

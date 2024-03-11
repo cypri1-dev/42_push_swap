@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:47:29 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:27:37 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:15:25 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	check_overflow(t_stack *a, char **args)
 {
-	t_stack *tmp;
-	int i;
-	int j;
-	char *nb;
-	
+	t_stack	*tmp;
+	int		i;
+	int		j;
+	char	*nb;
+
 	tmp = a;
 	i = 0;
 	while (tmp)
@@ -40,16 +40,16 @@ void	check_overflow(t_stack *a, char **args)
 
 void	check_double(t_stack *a, char **args)
 {
-	t_stack *tmp;
-	t_stack *tmp2;
-	tmp = a;
-	int value_test;
+	t_stack	*tmp;
+	t_stack	*tmp2;
+	int		value_test;
 
-	while(tmp)
+	tmp = a;
+	while (tmp)
 	{
 		tmp2 = tmp->next;
 		value_test = tmp->value;
-		while(tmp2)
+		while (tmp2)
 		{
 			if (tmp2->value == value_test)
 				exit_error(double_nb, a, args);
@@ -61,14 +61,16 @@ void	check_double(t_stack *a, char **args)
 
 static int	check_digit(char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	
-	while(str[i])
+	while (str[i])
 	{
-		if ((str[i] == '+' || str[i] == '-') && !(str[i + 1] >= '0' && str[i + 1] <= '9'))
+		if ((str[i] == '+' || str[i] == '-') && !(str[i + 1] >= '0' && str[i
+					+ 1] <= '9'))
 			return (0);
-		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' ' && str[i] != '-' && str[i] != '+')
+		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' ' && str[i] != '-'
+			&& str[i] != '+')
 			return (0);
 		i++;
 	}
@@ -85,20 +87,19 @@ void	pars_one_arg(char *str)
 
 int	check_env(char **envp)
 {
-	const char *env;
-	char *val_va;
-	int i;
+	const char	*env;
+	char		*val_va;
+	int			i;
 
 	env = "USER";
 	val_va = NULL;
 	i = 0;
-	
 	while (envp[i] != NULL)
 	{
 		if (ft_strstr(envp[i], (char *)env) == envp[i])
 		{
 			val_va = ft_strchr(envp[i], '=') + 1;
-			break;
+			break ;
 		}
 		i++;
 	}

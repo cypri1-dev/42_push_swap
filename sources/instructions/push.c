@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:13:59 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/07 18:43:47 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/11 08:43:13 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	push_a(t_stack **a, t_stack **b)
 {
-	t_stack *top_b;
-	
+	t_stack	*top_b;
+
 	if (*b == NULL)
 		return ;
 	top_b = *b;
@@ -33,10 +33,11 @@ void	push_a(t_stack **a, t_stack **b)
 	update_pos(*b);
 	ft_printf("pa\n");
 }
+
 void	push_b(t_stack **a, t_stack **b)
 {
-	t_stack *top_a;
-	
+	t_stack	*top_a;
+
 	if (*a == NULL)
 		return ;
 	top_a = *a;

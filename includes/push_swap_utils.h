@@ -6,12 +6,12 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 14:38:09 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/09 18:23:16 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 07:50:21 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_UTILS
-# define PUSH_SWAP_UTILS
+#ifndef PUSH_SWAP_UTILS_H
+# define PUSH_SWAP_UTILS_H
 
 /*all defines*/
 

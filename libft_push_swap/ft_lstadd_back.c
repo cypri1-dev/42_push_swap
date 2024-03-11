@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:11:53 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/02/13 18:47:48 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 07:53:22 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if (*lst == NULL)
 		*lst = new;
