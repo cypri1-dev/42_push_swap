@@ -18,8 +18,6 @@ The following table describes the various components and files included in the P
 | `libft`              | A directory containing the Libft library, used for some auxiliary functions.                        |
 | `Makefile`           | The Makefile script for automating project compilation.                                            |
 
-This table provides an overview of the main components of the Push Swap project and their functions.
-
 ## Installation and Compilation
 1. Clone this repository into your project:
 ```bash
