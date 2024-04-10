@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 11:34:32 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 10:33:08 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:18:06 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ void		update_pos(t_stack *stack);
 
 void		swap_a(t_stack **a, int print);
 void		swap_b(t_stack **b, int print);
-void		swap_a_b(t_stack **a, t_stack **b);
-void		push_a(t_stack **a, t_stack **b);
-void		push_b(t_stack **a, t_stack **b);
+void		swap_a_b(t_stack **a, t_stack **b, int print);
+void		push_a(t_stack **a, t_stack **b, int print);
+void		push_b(t_stack **a, t_stack **b, int print);
 void		rotate_a(t_stack **a, int print);
 void		rotate_b(t_stack **b, int print);
-void		rotate_a_b(t_stack **a, t_stack **b);
+void		rotate_a_b(t_stack **a, t_stack **b, int print);
 void		reverse_rotate_a(t_stack **a, int print);
 void		reverse_rotate_b(t_stack **b, int print);
-void		reverse_rotate_a_b(t_stack **a, t_stack **b);
+void		reverse_rotate_a_b(t_stack **a, t_stack **b, int print);
 
 /*push_swap algo functions*/
 
@@ -70,5 +70,6 @@ void		final_sort(t_stack **a, t_stack **b);
 void		calculate_size(t_stack **a, t_stack **b, t_cost *nbr);
 void		save_best_target(t_cost *nbr, t_stack **best_node, t_stack *tmp,
 				t_stack *target);
+char		*check_exec(t_stacks *stacks, char *line);
 
 #endif

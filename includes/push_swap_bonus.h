@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_push_swap.h                                  :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 11:37:38 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 15:27:25 by cyferrei         ###   ########.fr       */
+/*   Created: 2024/03/11 16:18:52 by cyferrei          #+#    #+#             */
+/*   Updated: 2024/03/11 20:49:02 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_PUSH_SWAP_H
-# define LIBFT_PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 # include <limits.h>
 # include <stdarg.h>
@@ -19,11 +23,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
-
 /*all structs*/
+
+enum				e_state
+{
+	env_error = 1,
+	arg_missing = 2,
+	wrong_input = 3,
+	arg_empty = 4,
+	double_nb = 5,
+	overflow = 6,
+	sorted = 7,
+};
 
 typedef struct s_cost
 {
@@ -108,5 +119,58 @@ char				*ft_strdup_gnl(const char *s);
 char				*extract_line(char *buffer);
 char				*obtain_rest(char *buffer);
 char				*get_next_line(int fd);
+
+/*push_swap parsing - exit functions prototypes*/
+
+int					check_env(char **envp);
+void				ft_check(t_stack *a, char **args);
+void				ft_algo(t_stack **a, t_stack **b);
+void				exit_error(enum e_state i, t_stack *a, char **args);
+void				pars_one_arg(char *str);
+void				init_multi_arg(int argc, char **argv);
+void				init_arg(char *str);
+char				**free_tab(char **split);
+void				check_double(t_stack *a, char **args);
+void				check_overflow(t_stack *a, char **args);
+int					check_empty_string(char *str);
+void				update_pos(t_stack *stack);
+
+/*push_swap instructions*/
+
+void				swap_a(t_stack **a, int print);
+void				swap_b(t_stack **b, int print);
+void				swap_a_b(t_stack **a, t_stack **b, int print);
+void				push_a(t_stack **a, t_stack **b, int print);
+void				push_b(t_stack **a, t_stack **b, int print);
+void				rotate_a(t_stack **a, int print);
+void				rotate_b(t_stack **b, int print);
+void				rotate_a_b(t_stack **a, t_stack **b, int print);
+void				reverse_rotate_a(t_stack **a, int print);
+void				reverse_rotate_b(t_stack **b, int print);
+void				reverse_rotate_a_b(t_stack **a, t_stack **b, int print);
+
+/*push_swap algo functions*/
+
+void				is_sorted(t_stack *a, char **args);
+void				sort_two(t_stack **a);
+void				sort_three(t_stack **a);
+void				sort_four(t_stack **a, t_stack **b);
+void				sort_worst_case(t_stack **a, t_stack **b);
+void				sort_stacks(t_stack **a, t_stack **b);
+void				sort_big_list(t_stack **a, t_stack **b);
+t_extremum			is_new_extremum(t_stack **a, t_extremum extrm);
+t_stack				*calculate_cost(t_stack **a, t_stack **b);
+int					is_up_or_down(t_stack **lst, t_stack *node);
+t_stack				*find_target(t_stack *node, t_stack **b);
+void				move_to_pos(t_stack **a, t_stack **b, t_stack *node);
+void				final_sort(t_stack **a, t_stack **b);
+void				calculate_size(t_stack **a, t_stack **b, t_cost *nbr);
+void				save_best_target(t_cost *nbr, t_stack **best_node,
+						t_stack *tmp, t_stack *target);
+char				*check_exec(t_stacks *stacks, char *line);
+void				first_check(char **envp, int argc);
+void				return_checker(char *line, t_stacks stacks);
+void				check_part_2(t_stacks *stacks, char *line);
+int					check_is_sorted(t_stack *a);
 
 #endif

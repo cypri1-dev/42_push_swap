@@ -6,13 +6,13 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:13:59 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 08:43:13 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:07:06 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	push_a(t_stack **a, t_stack **b)
+void	push_a(t_stack **a, t_stack **b, int print)
 {
 	t_stack	*top_b;
 
@@ -31,10 +31,11 @@ void	push_a(t_stack **a, t_stack **b)
 	*a = top_b;
 	update_pos(*a);
 	update_pos(*b);
-	ft_printf("pa\n");
+	if (print == 1)
+		ft_printf("pa\n");
 }
 
-void	push_b(t_stack **a, t_stack **b)
+void	push_b(t_stack **a, t_stack **b, int print)
 {
 	t_stack	*top_a;
 
@@ -53,5 +54,6 @@ void	push_b(t_stack **a, t_stack **b)
 	*b = top_a;
 	update_pos(*a);
 	update_pos(*b);
-	ft_printf("pb\n");
+	if (print == 1)
+		ft_printf("pb\n");
 }

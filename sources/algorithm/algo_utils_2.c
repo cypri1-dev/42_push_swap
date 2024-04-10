@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 08:49:31 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 10:38:47 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:20:17 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	calculate_size(t_stack **a, t_stack **b, t_cost *nbr)
 void	sort_worst_case(t_stack **a, t_stack **b)
 {
 	reverse_rotate_a(a, 1);
-	push_a(a, b);
+	push_a(a, b, 1);
 	rotate_a(a, 1);
 	rotate_a(a, 1);
 }

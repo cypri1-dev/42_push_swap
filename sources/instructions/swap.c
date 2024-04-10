@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 20:13:13 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 08:43:45 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:08:39 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	swap_a(t_stack **a, int print)
 			*a = second_node;
 	}
 	update_pos(*a);
-	if (print)
+	if (print == 1)
 		ft_printf("sa\n");
 }
 
@@ -54,13 +54,14 @@ void	swap_b(t_stack **b, int print)
 			*b = second_node;
 	}
 	update_pos(*b);
-	if (print)
+	if (print == 1)
 		ft_printf("sb\n");
 }
 
-void	swap_a_b(t_stack **a, t_stack **b)
+void	swap_a_b(t_stack **a, t_stack **b, int print)
 {
 	swap_a(a, 0);
 	swap_b(b, 0);
-	ft_printf("ss\n");
+	if (print == 1)
+		ft_printf("ss\n");
 }

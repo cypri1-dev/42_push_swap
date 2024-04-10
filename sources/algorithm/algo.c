@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:59 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 08:54:20 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:19:54 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,21 @@ void	sort_four(t_stack **a, t_stack **b)
 	int	min;
 	int	max;
 
-	push_b(a, b);
+	push_b(a, b, 1);
 	sort_three(a);
 	min = (*a)->value;
 	max = (*a)->next->next->value;
 	if ((*b)->value < min)
-		push_a(a, b);
+		push_a(a, b, 1);
 	else if ((*b)->value > max)
 	{
-		push_a(a, b);
+		push_a(a, b, 1);
 		rotate_a(a, 1);
 	}
 	else if ((*b)->value > min && (*b)->value < (*a)->next->value)
 	{
 		rotate_a(a, 1);
-		push_a(a, b);
+		push_a(a, b, 1);
 		reverse_rotate_a(a, 1);
 	}
 	else if ((*b)->value > (*a)->next->value && (*b)->value < max)
@@ -89,8 +89,8 @@ void	sort_big_list(t_stack **a, t_stack **b)
 	t_extremum	extrm;
 	t_stack		*best_element;
 
-	push_b(a, b);
-	push_b(a, b);
+	push_b(a, b, 1);
+	push_b(a, b, 1);
 	if ((*b)->value > (*b)->next->value)
 	{
 		extrm.max = (*b);

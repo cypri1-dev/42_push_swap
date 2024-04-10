@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:35:18 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 14:18:02 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:21:31 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ void	final_sort(t_stack **a, t_stack **b)
 		{
 			while (target->pos != 0)
 				rotate_a(a, 1);
-			push_a(a, b);
+			push_a(a, b, 1);
 		}
 		else if (is_up_or_down(a, target) == 0)
 		{
 			while (target->pos != 0)
 				reverse_rotate_a(a, 1);
-			push_a(a, b);
+			push_a(a, b, 1);
 		}
 		tmp_b = *b;
 	}

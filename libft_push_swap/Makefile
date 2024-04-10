@@ -6,7 +6,7 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/10 15:00:12 by cyferrei          #+#    #+#              #
-#    Updated: 2024/02/19 16:14:02 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/03/11 15:14:01 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRC = ft_printf.c \
 		ft_lstclear.c \
 		ft_lstsize.c \
 		ft_strcmp.c \
-		ft_strdup.c
+		ft_strdup.c \
+		get_next_line.c \
+		get_next_line_utils.c
 		
 NAME = libft_push_swap.a
 OBJS = $(SRC:.c=.o)

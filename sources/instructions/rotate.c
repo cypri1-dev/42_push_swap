@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 18:05:27 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/03/11 08:43:39 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:08:20 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rotate_a(t_stack **a, int print)
 	(*a)->previous = NULL;
 	last_node->next->next = NULL;
 	update_pos(*a);
-	if (print)
+	if (print == 1)
 		ft_printf("ra\n");
 }
 
@@ -46,13 +46,14 @@ void	rotate_b(t_stack **b, int print)
 	(*b)->previous = NULL;
 	last_node->next->next = NULL;
 	update_pos(*b);
-	if (print)
+	if (print == 1)
 		ft_printf("rb\n");
 }
 
-void	rotate_a_b(t_stack **a, t_stack **b)
+void	rotate_a_b(t_stack **a, t_stack **b, int print)
 {
 	rotate_a(a, 0);
 	rotate_b(b, 0);
-	ft_printf("rr\n");
+	if (print == 1)
+		ft_printf("rr\n");
 }
